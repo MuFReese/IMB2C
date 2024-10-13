@@ -1,0 +1,6 @@
+services:
+  imb2cserver:
+    image: ${DOCKER_REGISTRY-}imb2cserver
+    build:
+      context: .
+      dockerfile: IMB2CServer/Dockerfile
