@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+ frontend:
+   build:
+     context: ../front
+     dockerfile: Dockerfile
+   container_name: front
+   restart: always
+   ports:
+     - 3001:3001
+   volumes:
+     - ../front:/app
+     - /app/node_modules
+   environment:
+     - VITE_APP_BACKEND_ADDRESS=http://localhost/api
+   networks:
+     - network
+networks:
+ network:
